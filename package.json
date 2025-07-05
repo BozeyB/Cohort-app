@@ -1,0 +1,24 @@
+{
+  "name": "cohort-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "client": "npm --prefix client start",
+    "server": "npm --prefix server start",
+    "install-all": "npm install && npm --prefix client install && npm --prefix server install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "description": "A full-stack application for matching users based on interests and preferences.",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "body-parser": "^1.20.2",
+    "mongoose": "^6.9.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
