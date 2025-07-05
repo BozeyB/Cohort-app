@@ -11,6 +11,7 @@ import { auth } from './firebase';
 import { signOut } from 'firebase/auth';
 import { useEffect, useState } from 'react';
 import Dashboard from './pages/Dashboard';
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   const [user, setUser] = useState(null);
