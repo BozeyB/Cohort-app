@@ -75,10 +75,7 @@ function Dashboard() {
     const userSnap = await getDoc(userRef);
     const currentFavorites = userSnap.exists() ? userSnap.data().favorites || [] : [];
 
-    const alreadyFavorited = currentFavorites.some(
-      fav => fav.name === person.name && fav.school === person.school
-    );
-
+    const alreadyFavorited = currentFavorites.some(fav => fav.name === person.name && fav.school === person.school);
     if (!alreadyFavorited) {
       const updated = [...currentFavorites, person];
       setFavorites(updated);

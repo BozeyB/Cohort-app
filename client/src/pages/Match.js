@@ -1,4 +1,3 @@
-// src/pages/Match.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth, db } from '../firebase';
@@ -32,7 +31,6 @@ function Match() {
 
       const results = await response.json();
 
-      // Save to Firestore
       if (user) {
         const userRef = doc(db, 'users', user.uid);
         const userSnap = await getDoc(userRef);
@@ -44,7 +42,6 @@ function Match() {
         }, { merge: true });
       }
 
-      // Redirect to Dashboard
       navigate('/dashboard');
 
     } catch (err) {
